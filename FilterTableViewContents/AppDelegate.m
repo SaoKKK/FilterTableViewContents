@@ -8,19 +8,69 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+@interface AppDelegate (){
+    IBOutlet NSSearchField *searchField;
+    NSString* srcPath;
+}
 
-@property (weak) IBOutlet NSWindow *window;
+@property (strong) IBOutlet NSWindow *window;
+@property (strong) IBOutlet NSTableView *table;
 @end
 
 @implementation AppDelegate
+@synthesize table,srcList,filteredList;
+
+- (id)init{
+    self = [super init];
+    if (self) {
+        srcList = [[NSMutableArray array]retain];
+        filteredList = [[NSMutableArray array]retain];
+    }
+    return self;
+}
+
+- (void)dealloc{
+    [srcList release];
+    [filteredList release];
+    [super dealloc];
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    // Insert code here to initialize your application
+    //srcList読み込み
+    srcPath = [[[NSBundle mainBundle] pathForResource:@"srcList" ofType: @"array"]retain];
+    srcList = [[NSMutableArray arrayWithContentsOfFile:srcPath]retain];
+    //filteredList初期化
+    filteredList = [[NSMutableArray arrayWithArray:srcList]retain];
+    [table reloadData];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
-    // Insert code here to tear down your application
+    [srcList writeToFile:srcPath atomically:YES];
+}
+
+- (IBAction)searthAction:(id)sender {
+    NSString* filterStr = [sender stringValue];
+    if ([filterStr isEqualToString:@""]) {
+        //searchFieldが空の場合（空の文字列でフィルター処理ってのは無理らしいので必要）
+        //filteredListを初期化
+        filteredList = [[NSMutableArray arrayWithArray:srcList]retain];
+    }else{
+        //searchFieldの文字列でフィルター処理
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"FirstName CONTAINS %@",filterStr];
+        filteredList = [[NSMutableArray arrayWithArray:[srcList filteredArrayUsingPredicate:predicate]]retain];
+    }
+    [table reloadData];
+}
+
+//誕生日ボタンが押された
+- (IBAction)pshBirthday:(id)sender {
+    for (NSDictionary *data in filteredList) {
+        int index = [[data objectForKey:@"ID"]intValue];
+        int age = [[[srcList objectAtIndex:index]objectForKey:@"Age"]intValue];
+        age ++;
+        [[srcList objectAtIndex:index]setObject:[NSNumber numberWithInt:age] forKey:@"Age"];
+        [table reloadData];
+    }
 }
 
 @end
