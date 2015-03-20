@@ -12,6 +12,8 @@
 		B9F7C4341ABBDBAF00CF7049 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9F7C4331ABBDBAF00CF7049 /* Images.xcassets */; };
 		B9F7C4371ABBDBAF00CF7049 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F7C4351ABBDBAF00CF7049 /* MainMenu.xib */; };
 		B9F7C4431ABBDBAF00CF7049 /* FilterTableViewContentsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7C4421ABBDBAF00CF7049 /* FilterTableViewContentsTests.m */; };
+		B9F7C44E1ABBE54200CF7049 /* srcList.array in Resources */ = {isa = PBXBuildFile; fileRef = B9F7C44D1ABBE54200CF7049 /* srcList.array */; };
+		B9F7C4521ABBE77A00CF7049 /* TableSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F7C4511ABBE77A00CF7049 /* TableSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,10 +33,13 @@
 		B9F7C42F1ABBDBAE00CF7049 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B9F7C4311ABBDBAE00CF7049 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9F7C4331ABBDBAF00CF7049 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B9F7C4361ABBDBAF00CF7049 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B9F7C43C1ABBDBAF00CF7049 /* FilterTableViewContentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FilterTableViewContentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F7C4411ABBDBAF00CF7049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9F7C4421ABBDBAF00CF7049 /* FilterTableViewContentsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterTableViewContentsTests.m; sourceTree = "<group>"; };
+		B9F7C44C1ABBDBFF00CF7049 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B9F7C44D1ABBE54200CF7049 /* srcList.array */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = srcList.array; path = Resources/srcList.array; sourceTree = "<group>"; };
+		B9F7C4501ABBE77A00CF7049 /* TableSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableSource.h; sourceTree = "<group>"; };
+		B9F7C4511ABBE77A00CF7049 /* TableSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +83,11 @@
 			children = (
 				B9F7C42E1ABBDBAE00CF7049 /* AppDelegate.h */,
 				B9F7C42F1ABBDBAE00CF7049 /* AppDelegate.m */,
+				B9F7C4501ABBE77A00CF7049 /* TableSource.h */,
+				B9F7C4511ABBE77A00CF7049 /* TableSource.m */,
 				B9F7C4331ABBDBAF00CF7049 /* Images.xcassets */,
 				B9F7C4351ABBDBAF00CF7049 /* MainMenu.xib */,
+				B9F7C44F1ABBE55300CF7049 /* Resources */,
 				B9F7C42C1ABBDBAE00CF7049 /* Supporting Files */,
 			);
 			path = FilterTableViewContents;
@@ -109,6 +117,14 @@
 				B9F7C4411ABBDBAF00CF7049 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B9F7C44F1ABBE55300CF7049 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B9F7C44D1ABBE54200CF7049 /* srcList.array */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +189,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = B9F7C4201ABBDBAE00CF7049;
 			productRefGroup = B9F7C42A1ABBDBAE00CF7049 /* Products */;
@@ -193,6 +208,7 @@
 			files = (
 				B9F7C4341ABBDBAF00CF7049 /* Images.xcassets in Resources */,
 				B9F7C4371ABBDBAF00CF7049 /* MainMenu.xib in Resources */,
+				B9F7C44E1ABBE54200CF7049 /* srcList.array in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +228,7 @@
 			files = (
 				B9F7C4321ABBDBAE00CF7049 /* main.m in Sources */,
 				B9F7C4301ABBDBAE00CF7049 /* AppDelegate.m in Sources */,
+				B9F7C4521ABBE77A00CF7049 /* TableSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +254,7 @@
 		B9F7C4351ABBDBAF00CF7049 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B9F7C4361ABBDBAF00CF7049 /* Base */,
+				B9F7C44C1ABBDBFF00CF7049 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -252,7 +269,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -279,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -293,7 +310,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -315,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -328,6 +345,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FilterTableViewContents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -339,6 +357,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FilterTableViewContents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
