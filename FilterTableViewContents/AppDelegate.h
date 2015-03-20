@@ -10,6 +10,7 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
+@property (readwrite,retain,nonatomic)NSMutableArray *srcList,*filteredList;
 
 @end
 
